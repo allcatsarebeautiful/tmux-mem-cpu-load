@@ -17,7 +17,9 @@
 
 if [ ! -s /usr/local/bin/tmux-mem-cpu-load ]; then
   CURR_DIR="$( dirname "$0" ) && pwd"
+  echo $CURR_DIR
   pushd $CURR_DIR #Pushd to the directory where this plugin is located.
+  echo $( dirname "$0" ) && pwd
   cmake .
   make
   sudo make install
