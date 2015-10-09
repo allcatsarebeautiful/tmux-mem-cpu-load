@@ -15,9 +15,9 @@
  # See the License for the specific language governing permissions and
  # limitations under the License.
 
-if [ ! -s /usr/local/bin/tmux-mem-cpu-load ];
-then
-  pushd ${0:a:h} #Pushd to the directory where this plugin is located.
+if [ ! -s /usr/local/bin/tmux-mem-cpu-load ]; then
+  CURR_DIR="$( dirname "$0" ) && pwd"
+  pushd $CURR_DIR #Pushd to the directory where this plugin is located.
   cmake .
   make
   sudo make install
